@@ -1,21 +1,34 @@
 @import "tailwindcss";
-
+/* 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+} */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-work-sans);
   --font-mono: var(--font-geist-mono);
+  --font-work-sans: var(--font-work-sans);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .heading {
+    @apply font-work-sans my-5 max-w-5xl bg-black px-6 py-3 text-center text-[36px] leading-[46px] font-extrabold text-white uppercase sm:text-[54px] sm:leading-[64px];
   }
 }
 
